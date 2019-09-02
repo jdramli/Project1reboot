@@ -11,9 +11,11 @@
 
     <TextView
         android:id="@+id/temperature"
-        android:layout_width="228dp"
-        android:layout_height="0dp"
+        android:layout_width="218dp"
+        android:layout_height="120dp"
         android:layout_marginTop="88dp"
+        android:autoText="false"
+        android:clickable="false"
         android:text="Temperature will display here!"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

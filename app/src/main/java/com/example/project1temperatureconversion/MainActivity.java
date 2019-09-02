@@ -12,6 +12,9 @@ import androidx.appcompat.widget.Toolbar;
 import com.example.project1temperatureconversion.R;
 import com.example.project1temperatureconversion.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import java.lang.Math;
+import java.math.BigDecimal;
+import java.math.MathContext;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                     temperature = Double.valueOf(user_num.getText().toString()); // This crashes the app if no number is input -- use try/catch block
                     temperature = temperature * 9/5 + 32;
                     //temperature.setText(Double.toString(temperature));
-                    display_temperature.setText(Double.toString(temperature));
+                    display_temperature.setText(String.format("%.2f",temperature)+"°F");
                     //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     //        .setAction("Action", null).show();
                 }
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     temperature = Double.valueOf(user_num.getText().toString()); // This crashes the app if no number is input -- use try/catch block
                     temperature = (temperature-32) * 5/9;
                     //temperature.setText(Double.toString(temperature));
-                    display_temperature.setText(Double.toString(temperature));
+                    display_temperature.setText(String.format("%.2f",temperature)+"°C");
                     //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     //        .setAction("Action", null).show();
                 }
