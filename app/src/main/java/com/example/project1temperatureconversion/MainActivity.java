@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         //handles from content_main buttons/views
         final TextView display_temperature = findViewById(R.id.temperature);
         final TextView user_num = findViewById(R.id.user_num);
-
+        final ImageView bear = findViewById(R.id.imageView2);
         FloatingActionButton fab = findViewById(R.id.fab);
         FloatingActionButton fab2 = findViewById(R.id.fab2);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
                     temperature = Double.valueOf(user_num.getText().toString()); // This crashes the app if no number is input -- use try/catch block
                     temperature = temperature * 9/5 + 32;
                     //temperature.setText(Double.toString(temperature));
+                    display_temperature.setTextSize(50);
                     display_temperature.setText(String.format("%.2f",temperature)+"°F");
+                    bear.setImageResource(R.drawable.bearwaving);
                     //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     //        .setAction("Action", null).show();
                 }
@@ -58,7 +61,9 @@ public class MainActivity extends AppCompatActivity {
                     temperature = Double.valueOf(user_num.getText().toString()); // This crashes the app if no number is input -- use try/catch block
                     temperature = (temperature-32) * 5/9;
                     //temperature.setText(Double.toString(temperature));
+                    display_temperature.setTextSize(50);
                     display_temperature.setText(String.format("%.2f",temperature)+"°C");
+                    bear.setImageResource(R.drawable.bearwavingleft);
                     //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     //        .setAction("Action", null).show();
                 }
