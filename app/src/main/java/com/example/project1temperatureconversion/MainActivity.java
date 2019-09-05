@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     //        .setAction("Action", null).show();
                 }
                 catch(Exception e){
-                    display_temperature.setText("Error, enter only numbers for the temperature");
+                    display_temperature.setText("Error: enter the temperature using only numbers");
                 }
 
             }
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                     //        .setAction("Action", null).show();
                 }
                 catch(Exception e){
-                    display_temperature.setText("Error, enter only numbers for the temperature");
+                    display_temperature.setText("Error: enter the temperature using only numbers");
                 }
             }
         });

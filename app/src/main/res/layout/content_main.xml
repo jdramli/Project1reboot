@@ -16,7 +16,7 @@
         android:layout_marginTop="88dp"
         android:autoText="false"
         android:clickable="false"
-        android:text="Temperature will display here!"
+        android:text="Converted temperature will display here!"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
