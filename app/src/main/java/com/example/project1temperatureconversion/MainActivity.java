@@ -1,6 +1,7 @@
 package com.example.project1temperatureconversion;
 
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -70,6 +71,34 @@ public class MainActivity extends AppCompatActivity {
                 catch(Exception e){
                     display_temperature.setText("Error: enter the temperature using only numbers");
                 }
+            }
+        });
+
+        user_num.setOnKeyListener(new View.OnKeyListener() {
+            @Override
+            public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
+                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN && keyCode == keyEvent.KEYCODE_ENTER){
+
+
+                        try{
+                            temperature = Double.valueOf(user_num.getText().toString()); // This crashes the app if no number is input -- use try/catch block
+                            temperature = (temperature-32) * 5/9;
+                            //temperature.setText(Double.toString(temperature));
+                            display_temperature.setTextSize(50);
+                            display_temperature.setText(String.format("%.2f",temperature)+"°C");
+                            bear.setImageResource(R.drawable.bearwavingleft);
+                            //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                            //        .setAction("Action", null).show();
+                        }
+                        catch(Exception e){
+                            display_temperature.setText("Error: enter the temperature using only numbers");
+                        }
+                        return true;
+
+
+                }
+
+                return false;
             }
         });
     }
