@@ -15,5 +15,8 @@ The formatting was basic and did not have any images, but the basic structure of
 The few days after that up until now I have been adding fun images to appear and formatting backgrounds to learn more of the GUI aspect.  
 I now have an image of a bear that waves with his right paw when the "°F" is pressed, and another image of a different bear waving with his left paw when "°C" is pressed.
 
-I will see if I can make the "enter" button activate one of the converters before submitting, although I will remove that function if I can't debug it before the due-date.
+I decided that instead of the "enter" button, that pressing "c" on the computer keyboard  will convert to celsius and pressing "f" will convert to farenheit, or clicking each respective action button on screen,
+
+Overall, I have met the goals set out for this project, and have familiarized myself with many features of Android Studio. 
+There are still some bugs and better designs that could be made with this project, but overall it functions and has everything intended on screen. 
  
