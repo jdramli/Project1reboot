@@ -51,6 +51,7 @@ public class MainActivity extends AppCompatActivity {
                     //        .setAction("Action", null).show();
                 }
                 catch(Exception e){
+                    display_temperature.setTextSize(18);
                     display_temperature.setText("Error: enter the temperature using only numbers");
                 }
 
@@ -71,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
                     //        .setAction("Action", null).show();
                 }
                 catch(Exception e){
+                    display_temperature.setTextSize(18);
                     display_temperature.setText("Error: enter the temperature using only numbers");
                 }
             }
@@ -79,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
         user_num.setOnKeyListener(new View.OnKeyListener() {
             @Override
             public boolean onKey(View view, int keyCode, KeyEvent keyEvent) {
-                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN && keyCode == keyEvent.KEYCODE_ENTER){
+                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN && keyCode == keyEvent.KEYCODE_C){
 
 
                         try{
@@ -93,12 +95,35 @@ public class MainActivity extends AppCompatActivity {
                             //        .setAction("Action", null).show();
                         }
                         catch(Exception e){
+                            display_temperature.setTextSize(18);
                             display_temperature.setText("Error: enter the temperature using only numbers");
                         }
                         return true;
 
 
                 }
+                if(keyEvent.getAction() == KeyEvent.ACTION_DOWN && keyCode == keyEvent.KEYCODE_F){
+
+
+                    try{
+                        temperature = Double.valueOf(user_num.getText().toString()); // This crashes the app if no number is input -- use try/catch block
+                        temperature = temperature * 9/5 + 32;
+                        //temperature.setText(Double.toString(temperature));
+                        display_temperature.setTextSize(50);
+                        display_temperature.setText(String.format("%.2f",temperature)+"°F");
+                        bear.setImageResource(R.drawable.bearwaving);
+                        //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        //        .setAction("Action", null).show();
+                    }
+                    catch(Exception e){
+                        display_temperature.setTextSize(18);
+                        display_temperature.setText("Error: enter the temperature using only numbers");
+                    }
+                    return true;
+
+
+                }
+
 
                 return false;
             }
